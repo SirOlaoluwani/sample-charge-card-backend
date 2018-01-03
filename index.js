@@ -27,11 +27,11 @@ res.send('<body><head><link href="favicon.ico" rel="shortcut icon" />\
     </p></body></html>');
 });
 
-app.get('/new-access-code/:amount/:userEmail', function(req, res) {
+app.get('/new-access-code', function(req, res) {
     var customerid = req.params.customerid;
     var cartid     = req.params.cartid;
-    var amountToCharge = req.params.amount
-    var userEmail = req.params.userEmail
+    var amountToCharge = req.params.amount;
+    var userEmail = req.params.email;
     
     
     // you can then look up customer and cart details in a db etc
