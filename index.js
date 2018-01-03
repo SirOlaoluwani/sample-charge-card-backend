@@ -18,7 +18,7 @@ app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({   // to support URL-encoded bodies
     extended: true
 }));
-
+console.log(req.query.amount)
 app.get('/', function(req, res) {
 res.send('<body><head><link href="favicon.ico" rel="shortcut icon" />\
     </head><body><h1>Awesome!</h1><p>Your server is set up. \
