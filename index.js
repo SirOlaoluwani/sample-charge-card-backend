@@ -30,6 +30,8 @@ res.send('<body><head><link href="favicon.ico" rel="shortcut icon" />\
 app.get('/new-access-code/:amount/:email', function(req, res) {
     var customerid = req.params.customerid;
     var cartid     = req.params.cartid;
+    
+    //get email and amount from url
     var amountToCharge = req.params.amount;
     var userEmail = req.params.email;
     
