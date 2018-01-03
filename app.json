@@ -4,6 +4,17 @@
   "repository": "https://github.com/PaystackHQ/bare-node-backend-for-apps",
   "logo": "https://avatars1.githubusercontent.com/u/14998667?v=3&s=200",
   "keywords": ["node", "paystack", "mobile", "card"],
-  
+  "env": {
+      "PAYSTACK_SECRET_KEY": {
+        "description": "Your secret key is at https://dashboard.paystack.co/#/settings/developer (it will start with sk_)",
+        "required": true
+    },
+    "SAMPLE_EMAIL": {
+        "description": "A sample email with which to initialize all dummy transactions (must be a valid email)",
+        "required": true
+    },
+    "TEST_AMOUNT": {
+        "description": "An amount (in naira) with which to initialize all dummy transactions, defaults to 25naira. Will be ignored if less than 25."
+    }
   }
 }
