@@ -27,7 +27,7 @@ res.send('<body><head><link href="favicon.ico" rel="shortcut icon" />\
     </p></body></html>');
 });
 
-app.get('/new-access-code', function(req, res) {
+app.get('/new-access-code/:amount/:email', function(req, res) {
     var customerid = req.params.customerid;
     var cartid     = req.params.cartid;
     var amountToCharge = req.params.amount;
