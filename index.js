@@ -2,7 +2,7 @@
 require('dotenv').load();
 
 // paystack module is required to make charge token call
-var paystack = require('paystack')(process.env.PAYSTACK_SECRET_KEY);
+var paystack = require('paystack')("sk_test_6c5a8826ae5c3084cea893ef57d27e28dcb3501b");
 
 // uuid module is required to create a random reference number
 var uuid     = require('node-uuid');
@@ -18,7 +18,7 @@ app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({   // to support URL-encoded bodies
     extended: true
 }));
-console.log(req.query.amount)
+console.log(req.query.amount, req.query)
 app.get('/', function(req, res) {
 res.send('<body><head><link href="favicon.ico" rel="shortcut icon" />\
     </head><body><h1>Awesome!</h1><p>Your server is set up. \
@@ -27,16 +27,20 @@ res.send('<body><head><link href="favicon.ico" rel="shortcut icon" />\
     </p></body></html>');
 });
 
-app.get('/new-access-code', function(req, res) {
+app.get('/new-access-code/:amount/:userEmail', function(req, res) {
     var customerid = req.params.customerid;
     var cartid     = req.params.cartid;
+    var amountToCharge = req.params.amount
+    var userEmail = req.params.userEmail
+    
+    
     // you can then look up customer and cart details in a db etc
     // I'm hardcoding an email here for simplicity
-    amountinkobo = process.env.TEST_AMOUNT * 100;
+    amountinkobo = amountToCharge * 100;
     if(isNaN(amountinkobo) || (amountinkobo < 2500)){
         amountinkobo = 2500;
     }
-    email = process.env.SAMPLE_EMAIL;
+    email = userEmail;
 
     // all fields supported by this call can be gleaned from
     // https://developers.paystack.co/reference#initialize-a-transaction
