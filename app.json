@@ -6,11 +6,11 @@
   "keywords": ["node", "paystack", "mobile", "card"],
   "env": {
       "PAYSTACK_SECRET_KEY": {
-        "description": "Your secret key is at https://dashboard.paystack.co/#/settings/developer (it will start with sk_)",
+        "description": "sk_test_6c5a8826ae5c3084cea893ef57d27e28dcb3501b",
         "required": true
     },
     "SAMPLE_EMAIL": {
-        "description": "A sample email with which to initialize all dummy transactions (must be a valid email)",
+        "description": "olaoluwanionafowope@gmail.com",
         "required": true
     },
     "TEST_AMOUNT": {
