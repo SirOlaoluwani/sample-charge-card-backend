@@ -34,7 +34,7 @@ app.get('/new-access-code/:amount/:email', function(req, res) {
     //get email and amount from url
     var amountToCharge = req.params.amount;
     var userEmail = req.params.email;
-    
+    console.log(amountToCharge, userEmail)
     
     // you can then look up customer and cart details in a db etc
     // I'm hardcoding an email here for simplicity
