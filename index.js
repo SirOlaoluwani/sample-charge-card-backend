@@ -54,7 +54,7 @@ app.get('/new-access-code/:amount/:email', function(req, res) {
                 {
                     "display_name":"Started From",
                     "variable_name":"started_from",
-                    "value":"sample charge card backend"
+                    "value":"EDC Konnect charge card backend"
                 },
                 {
                     "display_name":"Requested by",
